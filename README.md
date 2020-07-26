@@ -2,6 +2,8 @@
 
 An example of creating AMP versions of websites for free
 
+Wrapper of [https://mercury.postlight.com/amp-converter/](https://mercury.postlight.com/amp-converter/)
+
 More info on AMP [here](https://en.wikipedia.org/wiki/Accelerated_Mobile_Pages)
 
 ## Usage
