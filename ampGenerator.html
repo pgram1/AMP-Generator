@@ -1,0 +1,43 @@
+<body onload="myFunction()">
+<script>
+
+function myFunction() {
+
+var getParams = function (url) {
+	var params = {};
+	var parser = document.createElement('a');
+	parser.href = url;
+	var query = parser.search.substring(1);
+	var vars = query.split('&');
+	for (var i = 0; i < vars.length; i++) {
+		var pair = vars[i].split('=');
+		params[pair[0]] = decodeURIComponent(pair[1]);
+	}
+	return params;
+};
+
+var parameters = getParams(window.location.href);
+
+var linkElement = document.createElement("a");
+
+linkElement.innerHTML = "Click here to access \""+parameters.uri+"\" in AMP format";
+
+var relAtt = document.createAttribute("rel");
+
+relAtt.value = "amphtml";
+
+var hrefAtt = document.createAttribute("href");
+
+hrefAtt.value = "https://mercury.postlight.com/amp?url="+parameters.uri;
+
+linkElement.setAttributeNode(relAtt);
+linkElement.setAttributeNode(hrefAtt);
+
+document.body.appendChild(linkElement);
+
+console.log(parameters.uri);
+
+}
+
+</script>
+</body>
